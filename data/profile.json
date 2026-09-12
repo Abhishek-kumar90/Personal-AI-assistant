@@ -1,0 +1,123 @@
+{
+  "_README": "Auto-filled from Abhishek's resume. Replace the few PLACEHOLDER items marked below (LinkedIn URL, GitHub URL, project links, location). Any key starting with underscore is ignored by the app. Keep quotes and commas intact; validate at https://jsonlint.com if the server won't start.",
+
+  "name": "Abhishek Kumar",
+  "preferredName": "Abhishek",
+
+  "headline": "Software Engineer · Java & Spring Boot · Backend",
+  "tagline": "I build reliable backend systems and like going deep on architecture.",
+
+  "location": "",
+  "_fill_location": "PLACEHOLDER — add your city, e.g. 'Greater Noida, India'. Leave empty to hide.",
+
+  "pronouns": "",
+  "availability": "Currently a Software Engineer at Publicis Sapient — always happy to connect about backend and platform work.",
+
+  "bio": "I'm a software engineer focused on backend systems in Java and Spring Boot. I currently build enterprise services at Publicis Sapient, working on event-driven architectures, REST APIs, and CI/CD. What I enjoy most is designing systems with clear guarantees — append-only event logs, concurrency control, and treating AI output as untrusted. I'm a heavy problem-solver (300+ LeetCode) and build focused side projects to go deep on architecture.",
+
+  "links": {
+    "email": "abhisheksh54005@gmail.com",
+    "linkedin": "https://linkedin.com/in/abhishek-kumar90a/",
+    "github": "https://github.com/Abhishek-kumar90",
+    "portfolio": "",
+    "resume": "https://drive.google.com/file/d/1mM5B8aOXxfkG5hGAMsEPVcMYXnllSuLK/view?usp=sharing",
+    "twitter": ""
+  },
+
+  "skills": {
+    "Languages": ["Java", "SQL", "JavaScript (basic)"],
+    "Backend & Frameworks": ["Spring Boot", "Spring Web (REST APIs)", "Spring Data JPA / Hibernate", "Bean Validation", "Async & Scheduling"],
+    "Architecture & Design": ["Event Sourcing", "CQRS", "Optimistic Concurrency", "REST API design", "Layered / Clean Architecture", "Design Patterns"],
+    "AI Integration": ["LangChain4j", "OpenAI API", "Schema-driven structured output", "Prompt engineering"],
+    "Data & Messaging": ["PostgreSQL", "Redis", "Apache Kafka"],
+    "DevOps & Tools": ["Git", "Maven", "Docker", "GitHub Actions", "Jenkins"],
+    "Testing": ["JUnit 5", "Mockito"],
+    "CS Fundamentals": ["Data Structures & Algorithms", "OOP", "DBMS", "Basic System Design"]
+  },
+
+  "experience": [
+    {
+      "role": "Junior Associate – Technology",
+      "company": "Publicis Sapient",
+      "location": "",
+      "start": "Aug 2025",
+      "end": "Present",
+      "summary": "Building and maintaining Java / Spring Boot modules for a large enterprise application in an Agile/Scrum team.",
+      "highlights": [
+        "Built and maintained Java modules using OOP and design patterns, improving reliability and cutting ~15 hours/week of repetitive manual effort across the team.",
+        "Worked hands-on with REST APIs — verifying 40+ endpoints, status codes, and request/response contracts — and wrote SQL to confirm data integrity across services.",
+        "Built and maintained CI/CD pipelines (Jenkins, GitHub Actions) that run on every commit, giving the team fast feedback and preventing regressions from reaching release.",
+        "Investigated failures across application logs and databases, isolated root causes, and resolved 75+ defects with developers."
+      ]
+    }
+  ],
+
+  "education": [
+    {
+      "degree": "B.Tech in Information Technology",
+      "institution": "Noida Institute of Engineering and Technology (NIET), Greater Noida",
+      "start": "Aug 2021",
+      "end": "Jul 2025",
+      "notes": ""
+    }
+  ],
+  "_fill_education": "Optional — add your 12th / 10th school here as more objects if you want them shown (degree/class, institution, start, end).",
+
+  "projects": [
+    {
+      "name": "Event-Sourced Ledger — Append-Only Accounting Service",
+      "description": "An append-only accounting service where an immutable event log is the single source of truth and balances are derived by folding events — giving a full audit trail and time-travel to any past state. Adds optimistic concurrency (HTTP 409 on conflict), atomic two-stream transfers via ordered locking, snapshots every 20 events, and a CQRS read model for fast queries. Benchmarked at ~4,000 transfers/sec in-memory.",
+      "tech": ["Java 21", "Spring Boot", "Event Sourcing", "CQRS", "Bean Validation"],
+      "link": ""
+    },
+    {
+      "name": "AI-Powered Structured Extraction API — Text → Validated JSON",
+      "description": "A REST service that turns unstructured text (emails, invoices) into validated, schema-conformant JSON. It treats LLM output as untrusted with a schema-driven prompt → parse → Bean-Validate → repair-or-fail loop (up to 3 attempts), then fails closed with HTTP 422 rather than returning malformed data. Zero-infra: runs with just Java + Maven.",
+      "tech": ["Java 21", "Spring Boot", "LangChain4j", "OpenAI", "Bean Validation"],
+      "link": ""
+    },
+    {
+      "name": "SBS Path Labs — Diagnostics Lab Web Application",
+      "description": "A complete diagnostics-lab web application designed, built, and delivered for a real-world client — digitizing patient reporting and appointment scheduling.",
+      "tech": [],
+      "link": ""
+    }
+  ],
+  "_fill_projects": "PLACEHOLDER — add each project's GitHub/live 'link' when you have it (empty just hides the link). Add tech for SBS Path Labs if you'd like.",
+
+  "achievements": [
+    "Active problem solver on LeetCode with 300+ problems solved, focused on core backend logic.",
+    "Delivered a complete diagnostics-lab web application (SBS Path Labs) to a real-world client."
+  ],
+
+  "careerStory": "I studied Information Technology at NIET, Greater Noida, graduating in 2025. Alongside coursework I went deep on data structures and algorithms (300+ LeetCode) and taught myself backend engineering by building real things — including a full diagnostics-lab web app delivered to a real client. I then joined Publicis Sapient as a Junior Associate in Technology, working on Java/Spring Boot services, REST APIs, and CI/CD in an Agile team. What I care about most is designing systems with clear guarantees — append-only event logs, optimistic concurrency, and safe handling of untrusted inputs like LLM output. I'm early in my career and learning fast, but I try to build things properly rather than just make them work.",
+
+  "personality": {
+    "tone": "Warm, direct, and practical. Technical but not pretentious.",
+    "quirks": "Explains with concrete examples, prefers precise wording, comfortable saying 'I don't know yet.'",
+    "values": "Correctness, clear design, continuous learning, and honest communication.",
+    "avoid": "Don't oversell, don't use empty buzzwords, don't pretend to know things I don't."
+  },
+
+  "faqs": [
+    {
+      "q": "What do you do?",
+      "a": "I'm a backend-focused software engineer at Publicis Sapient, building Java and Spring Boot services — REST APIs, event-driven design, and CI/CD."
+    },
+    {
+      "q": "What are you best at?",
+      "a": "Backend engineering in Java/Spring Boot: REST API design, event sourcing and CQRS, concurrency control, and safely integrating AI by treating model output as untrusted."
+    },
+    {
+      "q": "How can I reach you?",
+      "a": "The best way is email — abhisheksh54005@gmail.com. LinkedIn and GitHub links are on this site too."
+    }
+  ],
+
+  "suggestedQuestions": [
+    "What do you work on at Publicis Sapient?",
+    "Tell me about your Event-Sourced Ledger project",
+    "What are you strongest at as an engineer?",
+    "How can I get in touch?"
+  ]
+}

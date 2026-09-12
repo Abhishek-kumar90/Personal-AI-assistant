@@ -1,0 +1,19 @@
+# Secrets — never commit these
+.env
+
+# Dependencies
+node_modules/
+
+# Generated RAG index (rebuilt from profile.json; contains embeddings of your
+# personal data). Safe to delete — the server rebuilds it on next start.
+data/knowledge-base.json
+
+# Logs
+npm-debug.log*
+*.log
+
+# OS / editor junk
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

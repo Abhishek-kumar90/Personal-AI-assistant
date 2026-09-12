@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Personal AI Portfolio</title>
+    <meta
+      name="description"
+      content="An AI-powered personal portfolio — explore my projects and experience, or talk to my AI by voice."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="starfield" aria-hidden="true"></div>
+
+    <!-- ── Top navigation (always visible) ─────────────────────── -->
+    <header class="nav">
+      <a class="nav__brand" href="#/home" id="brandLink">
+        <span class="sigil" aria-hidden="true"><span class="sigil__dot"></span></span>
+        <span class="nav__name" id="navName">Loading…</span>
+      </a>
+
+      <nav class="nav__links" aria-label="Primary">
+        <a class="navlink is-active" href="#/home" data-page="home">Home</a>
+        <a class="navlink" href="#/projects" data-page="projects">Projects</a>
+        <a class="navlink" href="#/experience" data-page="experience">Experience</a>
+        <a class="navlink" href="#/chat" data-page="chat">Chat</a>
+      </nav>
+
+      <!-- Prominent, always-visible mic / voice button -->
+      <button class="talkbtn" id="talkBtn" aria-label="Talk to my AI by voice">
+        <span class="talkbtn__orb orb orb--mini orb--idle" aria-hidden="true">
+          <span class="orb__core"></span>
+          <span class="orb__glow"></span>
+        </span>
+        <span class="talkbtn__label">Talk to me</span>
+      </button>
+    </header>
+
+    <main class="pages">
+      <!-- ════════ HOME ════════ -->
+      <section class="page is-active" id="page-home">
+        <div class="hero">
+          <p class="hero__eyebrow" id="heroAvailability"></p>
+          <h1 class="hero__name" id="heroName">&nbsp;</h1>
+          <p class="hero__headline" id="heroHeadline"></p>
+          <p class="hero__tagline" id="heroTagline"></p>
+
+          <!-- The mic is the centerpiece -->
+          <div class="hero__voice">
+            <button class="heroOrb" id="heroOrb" aria-label="Tap to talk to my AI">
+              <span class="orb orb--hero orb--idle" aria-hidden="true">
+                <span class="orb__ripple"></span>
+                <span class="orb__ripple orb__ripple--2"></span>
+                <span class="orb__glow"></span>
+                <span class="orb__core"></span>
+              </span>
+            </button>
+            <p class="hero__voicelabel">🎙 Tap the orb to talk to my AI</p>
+            <a class="hero__chatlink" href="#/chat">…or type a message instead →</a>
+          </div>
+
+          <nav class="hero__links" id="heroLinks" aria-label="Links"></nav>
+        </div>
+      </section>
+
+      <!-- ════════ PROJECTS ════════ -->
+      <section class="page" id="page-projects" hidden>
+        <div class="section-head">
+          <h2 class="section-title">Projects</h2>
+          <p class="section-sub" id="projectsSub">Things I've built.</p>
+        </div>
+        <div class="project-grid" id="projectGrid"></div>
+        <div class="section-cta">
+          <p>Want the story behind any of these?</p>
+          <a class="btn btn--primary" href="#/chat">Ask my AI about my work →</a>
+        </div>
+      </section>
+
+      <!-- ════════ EXPERIENCE ════════ -->
+      <section class="page" id="page-experience" hidden>
+        <div class="section-head">
+          <h2 class="section-title">Experience</h2>
+          <p class="section-sub" id="experienceSub">Where I've worked and what I learned.</p>
+        </div>
+        <div class="timeline" id="timeline"></div>
+
+        <div class="subsection" id="eduSection" hidden>
+          <h3 class="subsection-title">Education</h3>
+          <div class="timeline" id="eduTimeline"></div>
+        </div>
+
+        <div class="subsection" id="skillsSection" hidden>
+          <h3 class="subsection-title">Skills</h3>
+          <div class="skillgroups" id="skillGroups"></div>
+        </div>
+
+        <div class="section-cta">
+          <p>Curious about a specific role or decision?</p>
+          <a class="btn btn--primary" href="#/chat">Ask my AI →</a>
+        </div>
+      </section>
+
+      <!-- ════════ CHAT ════════ -->
+      <section class="page page--chat" id="page-chat" hidden>
+        <div class="chat">
+          <div class="chat__modes" role="tablist" aria-label="Chat modes">
+            <button class="pill is-active" role="tab" aria-selected="true" data-mode="ask_me">Ask me</button>
+            <button class="pill" role="tab" aria-selected="false" data-mode="roadmap">Career roadmap</button>
+            <button class="pill" role="tab" aria-selected="false" data-mode="friend">Just chat</button>
+          </div>
+
+          <div class="stream" id="stream" aria-live="polite"></div>
+
+          <form class="composer" id="composer" autocomplete="off">
+            <!-- Prominent, labeled mic right in the chat -->
+            <button
+              type="button"
+              class="composer__voice"
+              id="voiceBtn"
+              aria-label="Talk instead of typing"
+              title="Talk instead of typing"
+            >
+              <span class="orb orb--mini orb--idle" id="miniOrb">
+                <span class="orb__core"></span>
+                <span class="orb__glow"></span>
+              </span>
+              <span class="composer__voicelabel">Talk</span>
+            </button>
+
+            <textarea
+              class="composer__input"
+              id="input"
+              rows="1"
+              placeholder="Ask me anything…"
+              maxlength="4000"
+              aria-label="Message"
+            ></textarea>
+
+            <button type="submit" class="composer__send" id="sendBtn" aria-label="Send message" disabled>
+              <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+                <path d="M4 12l16-8-6 8 6 8z" fill="currentColor" />
+              </svg>
+            </button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- ── Voice mode overlay ───────────────────────────────────── -->
+    <div class="voice" id="voice" hidden aria-hidden="true">
+      <div class="voice__inner" role="dialog" aria-modal="true" aria-label="Voice mode">
+        <button class="voice__close" id="voiceClose" aria-label="Exit voice mode">Done</button>
+        <div class="voice__stage">
+          <span class="orb orb--big orb--idle" id="bigOrb">
+            <span class="orb__ripple"></span>
+            <span class="orb__ripple orb__ripple--2"></span>
+            <span class="orb__glow"></span>
+            <span class="orb__core"></span>
+          </span>
+        </div>
+        <p class="voice__status" id="voiceStatus">Tap the orb to start</p>
+        <p class="voice__transcript" id="voiceTranscript"></p>
+        <button class="voice__tap" id="voiceTap" aria-label="Start or stop listening">
+          Tap orb to talk
+        </button>
+      </div>
+    </div>
+
+    <div class="toast" id="toast" role="status" hidden></div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

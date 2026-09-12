@@ -1,0 +1,30 @@
+{
+  "name": "personal-ai-console",
+  "version": "1.0.0",
+  "description": "A personal AI assistant web app with a real RAG pipeline (semantic retrieval over your profile) plus a voice orb and career-roadmap / mentor / friend modes, powered by the Google Gemini API.",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "ingest": "node scripts/ingest.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "personal-ai",
+    "portfolio",
+    "gemini",
+    "rag",
+    "embeddings",
+    "semantic-search",
+    "voice",
+    "assistant"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  }
+}
